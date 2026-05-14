@@ -134,6 +134,43 @@
       color: var(--muted);
       font-size: 0.9rem;
     }
+    /* Add to your CSS */
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.visitor-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #f8fafc;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1;
+}
+
+.visitor-icon {
+  font-size: 0.95rem;
+}
+
+.visitor-count {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
 
     @media (max-width: 640px) {
       .hero {
@@ -183,14 +220,16 @@
   </nav>
 
   <section id="about">
-    <div class="container">
-      <h2>About</h2>
-      <p>
-        I work on medical image analysis, with research interests in ultrasound imaging,
-        landmark detection, segmentation, semi-supervised learning, and multimodal learning.
-      </p>
-    </div>
-  </section>
+  <div class="container">
+    <h2>About</h2>
+    <p>
+      I am a Ph.D. candidate in the School of Computer Science at Wuhan University.
+      My research focuses on medical image analysis, medical world models,
+      and intelligent analysis of fetal medical images, with particular interests
+      in ultrasound imaging, segmentation, landmark detection, and multimodal learning.
+    </p>
+  </div>
+</section>
 
   <section id="research">
     <div class="container">
@@ -274,14 +313,19 @@
     </div>
   </section>
 
-  <footer>
-  <div class="container">
-    © 2026 Chen Xi · Powered by GitHub Pages
-    <div style="margin-top: 8px;">
-      Views: <span id="busuanzi_value_site_pv"></span>
+  <!-- Replace your existing footer with this -->
+<footer>
+  <div class="container footer-inner">
+    <div>© 2026 Chen Xi · Powered by GitHub Pages</div>
+    <div class="visitor-card" title="Total site visits">
+      <span class="visitor-icon">👁</span>
+      <span>Total Views</span>
+      <span class="visitor-count" id="busuanzi_value_site_pv">--</span>
     </div>
   </div>
 </footer>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </body>
