@@ -214,6 +214,483 @@
       text-align: center;
     }
 
+    .qr-toggle {
+      display: inline-block;
+      cursor: pointer;
+      position: relative;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 4px;
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    .qr-toggle img {
+      width: 128px;
+      height: 128px;
+      display: block;
+      border-radius: 4px;
+      object-fit: cover;
+      transition: opacity 0.25s ease;
+      user-select: none;
+    }
+
+    .qr-toggle .qr-real {
+      position: absolute;
+      inset: 4px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .qr-toggle .qr-placeholder {
+      position: relative;
+      z-index: 1;
+    }
+
+    .qr-toggle::after {
+      content: "Click to Reveal";
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #ffffff;
+      background: rgba(31, 78, 121, 0.45);
+      backdrop-filter: blur(1px);
+      transition: opacity 0.25s ease;
+    }
+
+    .qr-toggle:hover::after {
+      background: rgba(31, 78, 121, 0.55);
+    }
+
+    .qr-toggle input {
+      display: none;
+    }
+
+    .qr-toggle input:checked ~ .qr-real {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .qr-toggle input:checked ~ .qr-placeholder {
+      opacity: 0;
+    }
+
+    .qr-toggle input:checked ~ .qr-overlay {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .qr-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #ffffff;
+      background: rgba(31, 78, 121, 0.45);
+      transition: opacity 0.25s ease;
+    }
+
+    .qr-label {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    footer {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 16px 24px 36px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .visitor-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 4px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #fafafa;
+    }
+
+    .visitor-count {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    @media (max-width: 720px) {
+      .hero-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .avatar {
+        width: 140px;
+        height: 140px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .container,
+      footer {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container topbar">
+      <a class="brand" href="#top">Chen Xi</a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="container">
+      <div class="hero-card">
+        <img src="profile.jpg" alt="Chen Xi" class="avatar" />
+        <div>
+          <h1>Chen Xi</h1>
+          <div class="role">
+            Ph.D. Candidate, School of Computer Science, Wuhan University<br>
+            Medical Image Analysis · Medical World Models · Fetal Ultrasound Intelligence
+          </div>
+          <div class="contact-mini">
+            <a href="mailto:yx.chen@whu.edu.cn">yx.chen@whu.edu.cn</a> · Wuhan, China
+          </div>
+          <div class="profile-links">
+            <a href="https://scholar.google.com/citations?user=QSplyxcAAAAJ&hl=zh-CN" target="_blank">Google Scholar</a>
+            <a href="https://github.com/SIGMACX" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I am a Ph.D. candidate in the School of Computer Science at Wuhan University.
+        My research focuses on medical image analysis, medical world models, and intelligent
+        analysis of fetal medical images, with particular interests in ultrasound imaging,
+        segmentation, landmark detection, and multimodal learning.
+      </p>
+    </section>
+
+    <section id="research">
+      <h2>Research Interests</h2>
+      <div class="tag-list">
+        <span class="tag">Medical Image Analysis</span>
+        <span class="tag">Medical World Models</span>
+        <span class="tag">Fetal Ultrasound Imaging</span>
+        <span class="tag">Computer Vision</span>
+        <span class="tag">Semi-Supervised Learning</span>
+        <span class="tag">Multimodal Learning</span>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+
+      <div class="publication"><div class="pub-title">SFDA-NIL: Noisy Imbalance Learning in Medical Imaging with Spatial Feature-Guided Distribution Adaptation</div><div class="pub-authors">X Chen, L Tong*, B Du*</div></div>
+      <div class="publication"><div class="pub-title">PSCM: Pseudo-Label Self-Correction with Mask Learning for Semi-Supervised Medical Image Segmentation</div><div class="pub-authors">X Chen, L Tong*, H Zhao, B Du*</div></div>
+      <div class="publication"><div class="pub-title">TPL-SAM: Trustworthy Prompt Learning for Semi-Supervised Medical Image Segmentation</div><div class="pub-authors">X Chen, L Tong*, B Du*</div></div>
+      <div class="publication"><div class="pub-title">IUGC: A Benchmark of Landmark Detection in End-to-End Intrapartum Ultrasound Biometry <a href="https://www.sciencedirect.com/science/article/pii/S1361841526000290" target="_blank">[Paper]</a></div><div class="pub-authors">J Bai, Y Tang, X Liu, J Hu, Y Li, X Chen, Y Wang, C Ma, Y Li, B Guo, J Jiao, et al.</div><div class="pub-venue">Medical Image Analysis</div></div>
+      <div class="publication"><div class="pub-title">Automatic Diagnosis of Early Pregnancy Fetal Nasal Bone Development Based on Complex Mid-Sagittal Section Ultrasound Imaging <a href="https://www.sciencedirect.com/science/article/pii/S092523122500445X" target="_blank">[Paper]</a></div><div class="pub-authors">X Chen, X Xu, L Tong, H Zhao, B Du</div><div class="pub-venue">Neurocomputing</div></div>
+      <div class="publication"><div class="pub-title">Pseudo-label Enhanced TransUNet for Robust Landmark Localization in Intrapartum Ultrasound <a href="https://link.springer.com/chapter/10.1007/978-3-032-11616-1_7" target="_blank">[Paper]</a></div><div class="pub-authors">X Zhang, X Chen, H Yan, L Tong, B Du</div><div class="pub-venue">Intrapartum Ultrasound Grand Challenge</div></div>
+      <div class="publication"><div class="pub-title">Uncertainty-Guided Adaptive Correction for Semi-Supervised Medical Image Segmentation <a href="https://ieeexplore.ieee.org/abstract/document/11273087" target="_blank">[Paper]</a></div><div class="pub-authors">X Chen, L Tong, H Zhao, B Du</div><div class="pub-venue">IEEE Transactions on Image Processing</div></div>
+      <div class="publication"><div class="pub-title">PCLIM: Prototype-Based Category-Level Image-Text Multimodal Learning for Fetal Cardiac Ultrasound Imaging Analysis <a href="https://ieeexplore.ieee.org/abstract/document/11357174" target="_blank">[Paper]</a></div><div class="pub-authors">X Chen, L Tong, B Du</div><div class="pub-venue">IEEE BIBM</div></div>
+      <div class="publication"><div class="pub-title">A Novel Fast Reconstruction Method for Single Image Super Resolution Task <a href="https://link.springer.com/article/10.1007/s11063-023-11235-y" target="_blank">[Paper]</a></div><div class="pub-authors">X Chen, H Zhao</div><div class="pub-venue">Neural Processing Letters</div></div>
+      <div class="publication"><div class="pub-title">SA-SinGAN: Self-Attention for Single-Image Generative Adversarial Networks <a href="https://link.springer.com/article/10.1007/s00138-021-01228-z" target="_blank">[Paper]</a></div><div class="pub-authors">X Chen, H Zhao, D Yang, Y Li, Q Kang, H Lu</div><div class="pub-venue">Machine Vision and Applications</div></div>
+
+      <p style="margin-top: 12px;">
+        <a href="https://scholar.google.com/citations?user=QSplyxcAAAAJ&hl=zh-CN" target="_blank">View complete list on Google Scholar.</a>
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-row">
+        <div class="qr-block">
+          <label class="qr-toggle">
+            <input type="checkbox" aria-label="Reveal WeChat QR Code" />
+            <img src="profile.jpg" alt="Preview Image" class="qr-placeholder" />
+            <img src="wechat_qr.png" alt="WeChat QR Code" class="qr-real" />
+            <span class="qr-overlay">Click to Reveal</span>
+          </label>
+          <div class="qr-label">WeChat</div>
+        </div>
+        <div>
+          <p>
+            Chen Xi<br>
+            School of Computer Science, Wuhan University<br>
+            Wuhan, China<br>
+            <a href="mailto:yx.chen@whu.edu.cn">yx.chen@whu.edu.cn</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© 2026 Chen Xi · Powered by GitHub Pages</div>
+    <div class="visitor-card" title="Total site visits">
+      <span>👁</span>
+      <span>Total Views</span>
+      <span class="visitor-count" id="busuanzi_value_site_pv">--</span>
+    </div>
+  </footer>
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chen Xi | Academic Homepage</title>
+  <style>
+    :root {
+      --primary: #1f4e79;
+      --accent: #2563eb;
+      --text: #222222;
+      --muted: #666666;
+      --border: #e5e7eb;
+      --card: #ffffff;
+      --light: #fafbfc;
+      --max-width: 980px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--text);
+      background: #ffffff;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      background: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 12px 0;
+    }
+
+    .brand {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .hero {
+      padding: 28px 0 18px;
+    }
+
+    .hero-card {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--light);
+    }
+
+    .avatar {
+      width: 180px;
+      height: 180px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      line-height: 1.2;
+      color: var(--primary);
+    }
+
+    .role {
+      margin-top: 8px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .contact-mini {
+      margin-top: 8px;
+      color: var(--muted);
+    }
+
+    .profile-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .profile-links a {
+      padding: 4px 9px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #ffffff;
+      font-size: 0.92rem;
+    }
+
+    main {
+      padding-bottom: 24px;
+    }
+
+    section {
+      padding: 10px 0 16px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 1.24rem;
+      color: var(--primary);
+    }
+
+    p {
+      margin: 0 0 8px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      color: #4b5563;
+      font-size: 0.86rem;
+    }
+
+    .publication {
+      padding: 10px 0;
+      border-bottom: 1px solid #eef0f3;
+    }
+
+    .publication:last-of-type {
+      border-bottom: none;
+    }
+
+    .pub-title {
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .pub-title a {
+      margin-left: 4px;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .pub-authors,
+    .pub-venue {
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .qr-block {
+      text-align: center;
+    }
+
     .qr-block img {
       width: 128px;
       height: 128px;
