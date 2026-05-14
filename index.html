@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chen Xi | Academic Homepage</title>
+  <style>
+    :root {
+      --primary: #1f4e79;
+      --accent: #2563eb;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --bg: #ffffff;
+      --border: #e5e7eb;
+      --max-width: 860px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      padding: 48px 0 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--border);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .subtitle {
+      margin-top: 6px;
+      color: var(--muted);
+    }
+
+    .links {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 0.95rem;
+    }
+
+    nav {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 8px;
+    }
+
+    nav .container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 28px 0;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      color: var(--primary);
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    .pub {
+      margin-bottom: 16px;
+    }
+
+    .pub-title {
+      font-weight: 600;
+    }
+
+    .pub-meta {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 4px 6px 0 0;
+      padding: 2px 8px;
+      font-size: 0.84rem;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: var(--accent);
+    }
+
+    footer {
+      padding: 28px 0 48px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .avatar {
+        width: 96px;
+        height: 96px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="hero">
+        <img src="profile.jpg" alt="Chen Xi" class="avatar" />
+        <div>
+          <h1>Chen Xi</h1>
+          <div class="subtitle">Wuhan University</div>
+          <div class="subtitle">Medical Image Analysis · Computer Vision · Deep Learning</div>
+          <div class="subtitle">yx.chen@whu.edu.cn</div>
+          <div class="links">
+            <a href="https://scholar.google.com/citations?user=QSplyxcAAAAJ&hl=zh-CN" target="_blank">Google Scholar</a>
+            <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank">GitHub</a>
+            <a href="https://orcid.org/YOUR_ORCID" target="_blank">ORCID</a>
+            <a href="cv.pdf" target="_blank">CV</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section id="about">
+    <div class="container">
+      <h2>About</h2>
+      <p>
+        I work on medical image analysis, with research interests in ultrasound imaging,
+        landmark detection, segmentation, semi-supervised learning, and multimodal learning.
+      </p>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="container">
+      <h2>Research Interests</h2>
+      <span class="tag">Medical Image Analysis</span>
+      <span class="tag">Ultrasound Imaging</span>
+      <span class="tag">Computer Vision</span>
+      <span class="tag">Semi-Supervised Learning</span>
+      <span class="tag">Multimodal Learning</span>
+    </div>
+  </section>
+
+  <section id="publications">
+    <div class="container">
+      <h2>Publications</h2>
+
+      <div class="pub">
+        <div class="pub-title">IUGC: A Benchmark of Landmark Detection in End-to-End Intrapartum Ultrasound Biometry</div>
+        <div class="pub-meta">J Bai, Y Tang, X Liu, J Hu, Y Li, X Chen, Y Wang, C Ma, Y Li, B Guo, J Jiao, et al. · Medical Image Analysis, 2026</div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">Automatic Diagnosis of Early Pregnancy Fetal Nasal Bone Development Based on Complex Mid-Sagittal Section Ultrasound Imaging</div>
+        <div class="pub-meta">X Chen, X Xu, L Tong, H Zhao, B Du · Neurocomputing, 2025</div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">Pseudo-label Enhanced TransUNet for Robust Landmark Localization in Intrapartum Ultrasound</div>
+        <div class="pub-meta">X Zhang, X Chen, H Yan, L Tong, B Du · Intrapartum Ultrasound Grand Challenge, 2025</div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">Uncertainty-Guided Adaptive Correction for Semi-Supervised Medical Image Segmentation</div>
+        <div class="pub-meta">X Chen, L Tong, H Zhao, B Du · IEEE Transactions on Image Processing, 2025</div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">PCLIM: Prototype-Based Category-Level Image-Text Multimodal Learning for Fetal Cardiac Ultrasound Imaging Analysis</div>
+        <div class="pub-meta">X Chen, L Tong, B Du · IEEE BIBM, 2025</div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">A Novel Fast Reconstruction Method for Single Image Super Resolution Task</div>
+        <div class="pub-meta">X Chen, H Zhao · Neural Processing Letters, 2023</div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">SA-SinGAN: Self-Attention for Single-Image Generative Adversarial Networks</div>
+        <div class="pub-meta">X Chen, H Zhao, D Yang, Y Li, Q Kang, H Lu · Machine Vision and Applications, 2021</div>
+      </div>
+
+      <p>
+        <a href="https://scholar.google.com/citations?user=QSplyxcAAAAJ&hl=zh-CN" target="_blank">View complete list on Google Scholar.</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>
+        Chen Xi<br>
+        Wuhan University, China<br>
+        <a href="mailto:yx.chen@whu.edu.cn">yx.chen@whu.edu.cn</a>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Chen Xi · Powered by GitHub Pages
+  </footer>
+</body>
+</html>
