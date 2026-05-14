@@ -250,24 +250,6 @@
       z-index: 1;
     }
 
-    .qr-toggle::after {
-      content: "Click to Reveal";
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: #ffffff;
-      background: rgba(31, 78, 121, 0.45);
-      backdrop-filter: blur(1px);
-      transition: opacity 0.25s ease;
-    }
-
-    .qr-toggle:hover::after {
-      background: rgba(31, 78, 121, 0.55);
-    }
 
     .qr-toggle input {
       display: none;
@@ -290,6 +272,7 @@
     .qr-overlay {
       position: absolute;
       inset: 0;
+      z-index: 2;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -300,11 +283,21 @@
       transition: opacity 0.25s ease;
     }
 
+    .qr-toggle:hover .qr-overlay {
+      background: rgba(31, 78, 121, 0.55);
+    }
+
     .qr-label {
       width: 100%; 
       margin-top: 6px;
       color: var(--muted);
       font-size: 0.9rem;
+      transition: opacity 0.25s ease;
+    }
+
+    .qr-toggle input:checked ~ .qr-overlay + .qr-label,
+    .qr-block.revealed .qr-label {
+      opacity: 0;
     }
 
     footer {
@@ -446,7 +439,7 @@
     <section id="contact">
       <h2>Contact</h2>
       <div class="contact-row">
-        <div class="qr-block">
+        <div class="qr-block" onclick="this.classList.add('revealed')">
           <label class="qr-toggle">
             <input type="checkbox" aria-label="Reveal WeChat QR Code" />
             <img src="profile.jpg" alt="Preview Image" class="qr-placeholder" />
